@@ -8,6 +8,41 @@
     <link rel="stylesheet" href="css/doctorsignup.css">
 </head>
 <body>
+        <div class="container">
+                <div class="banner">
+                    <p>Doctor Registration Form</p>
+                </div> 
+                <div class="formContent">
+                    <form action="" name="doctorLogin">
+                        <div class="inputContainer fullName">
+                            <label for="fullName">Full Name: </label>
+                            <input type="text" name="fullname" id="fullname">
+                            <span class="fullnameError"></span>
+                        </div>
+                        <div class="inputContainer Password">
+                            <label for="email">Email :</label>
+                            <input type="email" name="email" id="email">
+                            <span class="emailError"></span>
+                        </div>
+                        <div class="inputContainer Phone">
+                            <label for="phone">Phone</label>
+                            <input type="phone" name="phone" id="phoneNumber">
+                            <span class="phoneError"></span>
+                        </div>
+                         <div class="inputContainer CreatePassword">
+                            <label for="password">Create Password:</label>
+                            <input type="password" name="createPassword" id="password">
+                            <span class="passwordError"></span>
+                         </div>
+                         <div class="inputContainer CreatePassword">
+                          <label for="password">Confirm Password:</label>
+                          <input type="password" name="confirmPassword" id="confirmPassword">
+                          <span class="confirmPasswordError"></span>
+                        </div>
+                        <input type="submit" name="register" value="Register" class="submit">
+                    </form>
+                </div>
+              </div>
    <script src="js/doctorSingup.js"></script> 
 </body>
 </html>
