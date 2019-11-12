@@ -1,0 +1,22 @@
+html,body{
+    margin:0px;
+    padding:0px;
+}
+main{
+    background:white;
+}
+main header{
+    height:60vh;
+    display:flex;
+    flex-direction: column;
+}
+#pageLogo{
+    background-color:whitesmoke;
+    height:150px;
+}
+#page-navigation{
+    background-color:blue;
+    color:white;
+    height:150px;
+
+}
