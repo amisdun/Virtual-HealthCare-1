@@ -1,0 +1,88 @@
+html,body{
+    margin:0px;
+    padding:0px;
+}
+.wrapper{
+    width:50%;
+    margin:auto;
+}
+.content{
+    background-color:white;
+    border:1px solid #ccc;
+    padding: 3em;
+    border-radius:2em;
+}
+.heading p{
+ text-transform: uppercase;
+ color:black;
+ opacity: 0.9;
+ text-align: center;
+}
+.user{
+    width:100px;
+    height:100px;
+    background-color:lightseagreen;
+    margin: auto;
+    border-radius:50px;
+    position: relative;
+    top:30px;
+}
+.inputContainer{
+    margin:auto;
+    margin:1.5em;
+}
+input{
+    width:100%;
+}
+.email,.password{
+    height:20px;
+    padding:10px;
+    border: 1px solid black;
+}
+.submit{
+ color:white;
+ background-color:lightseagreen;
+ border:lightseagreen;
+ padding:1em 10px 1em 10px;
+ border-radius:15px;
+ box-shadow: 0px 2px 4px 2px grey;
+ margin-left: 10px;
+}
+.forgotPassword{
+    float:right;
+}
+.forgotPassword a{
+    text-decoration:none;
+    color:lightseagreen;;
+}
+.email:focus,.password:focus{
+    border:2px solid red;
+}
+
+label{
+    color:red;
+    float:right;
+    padding:5px;
+}
+.isInvalid{
+    border:2px solid red;
+}
+/*---------------------- media query -----------*/
+@media screen and (max-width:768px) {
+    .wrapper{
+      width:70%;
+    }
+}
+@media screen and (max-width:450px) {
+    .wrapper{
+        width:90%;
+    }
+    .inputContainer{
+    margin:auto;
+    margin:1.5em 0;
+}
+.formContianer{
+    margin:auto;
+}
+
+}
