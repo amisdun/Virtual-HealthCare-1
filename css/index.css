@@ -1,22 +1,121 @@
-html,body{
+html,body,main,div,img,h1,h2,h3,h4,h5,h6,p{
     margin:0px;
     padding:0px;
 }
 main{
-    background:white;
+    background:#fff;
 }
+/*------------------ header content ----------------*/
 main header{
+    width:100%;
+    margin:0px;
     height:60vh;
-    display:flex;
-    flex-direction: column;
+    background-color:white;
 }
+/*---------- page header logo section -----------------*/
 #pageLogo{
-    background-color:whitesmoke;
-    height:150px;
+    background-color:white;
+    height:200px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(1,1fr);
 }
+.image {
+    width:80px;
+    height:60px;
+}
+.page-title{
+    margin:0px;
+    padding:0px;
+}
+.logo{
+    width:150px;
+    height:100px;
+}
+
+.image > img {
+    width:200px;
+    height:200px;
+}
+
+.logo > img{
+    width:150px;
+    height: 100px;
+    border:2px solid black;
+    box-shadow:0px 4px 4px 0px black;
+}
+/*------- page header navigation ------*/
 #page-navigation{
-    background-color:blue;
     color:white;
     height:150px;
+    background-color: blue;
+    width:100% ;
+}
+#page-navigation ul li a{
+    font-size:1.3em;
+}
+#page-navigation nav{
+    border-bottom:1px black inset;
+    padding-bottom:.5em;
+}
 
+/*------------ page main content -------*/
+.mainPage{
+    width:100%;
+}
+.mainPage .container{
+    
+}
+.mainPage .container img{
+    width:100%;
+    background-repeat: no repeat;
+    background-size: cover;
+    height: 500px;
+}
+.navContent{
+display: grid;
+grid-template-columns: repeat(4,1fr);
+grid-template-rows: repeat(1,1fr);
+grid-gap:10px;
+}
+.navContent > div{
+  position: relative;
+  bottom:30px;
+  padding:1em;
+}
+.navContent .doctor{
+    background-color:lightseagreen;
+    color:white;
+    margin-left: 20px;
+    
+}
+.navContent .patientPortal{
+    background-color:rgb(13, 158, 206);
+    color:white;
+}
+.patientPortal a, .pharmacy a,.doctor a{
+margin-top:20px;
+}
+.navContent .pharmacy{
+    background-color:lightseagreen;
+    color:white;
+}
+.navContent .admin{
+    background-color:green;
+    color:white;
+    margin-right: 20px;
+}
+.navContent a{
+    color:black;
+    position: relative;
+    margin-left:4.5em;
+}
+.navContentImages{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows: repeat(1,1fr);
+}
+.navContentImages img{
+    width:150px;
+    height:150px;
 }
