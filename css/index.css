@@ -1,4 +1,4 @@
-html,body,main,div,img,h1,h2,h3,h4,h5,h6,p{
+html,body,main,div,img,h1,h2,h3,h4,h5,h6,p,nav,section,main,footer,header{
     margin:0px;
     padding:0px;
 }
@@ -7,7 +7,7 @@ main{
 }
 /*------------------ header content ----------------*/
 main header{
-    width:100%;
+    width:100vw;
     margin:0px;
     height:60vh;
     background-color:white;
@@ -110,12 +110,48 @@ margin-top:20px;
     position: relative;
     margin-left:4.5em;
 }
-.navContentImages{
+.doctorImage{
+    width:200px;
+    height: 20px;
+}
+
+.activities{
+    background-color:#ccc;
     display: grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(2,1fr);
+    grid-auto-rows: repeat(1,1fr);
+    grid-gap: 30px;
+    padding:20px;
+    
+}
+.mainActivites .subgrid{
+    background-color:white;
+    border-bottom:1px solid green;
+    padding:15px;
+}
+.subgrid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(1,1fr);
+    grid-gap:0px;
+}
+.navContentImages {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(1,1fr);
 }
 .navContentImages img{
-    width:150px;
-    height:150px;
+    margin-left:50px;
+}
+.video{
+    width:600px;
+    height: 700px;
+    border:2px solid black;;
+}
+.title{
+ font-family: cursive;
+}
+.copyright{
+    width:100vw;
+    margin:auto;
 }
