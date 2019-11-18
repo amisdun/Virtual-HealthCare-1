@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Doctor Registration Form</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="css/doctorsignup.css">
 </head>
 <body>
@@ -16,33 +17,40 @@
                     <form action="" name="doctorLogin">
                         <div class="inputContainer fullName">
                             <label for="fullName">Full Name: </label>
-                            <input type="text" name="fullname" id="fullname">
+                            <input type="text" name="fullname" id="fullname" class="form-control">
                             <span class="fullnameError"></span>
                         </div>
                         <div class="inputContainer Password">
                             <label for="email">Email :</label>
-                            <input type="email" name="email" id="email">
+                            <input type="email" name="email" id="email" class="form-control">
                             <span class="emailError"></span>
                         </div>
                         <div class="inputContainer Phone">
                             <label for="phone">Phone</label>
-                            <input type="phone" name="phone" id="phoneNumber">
+                            <input type="phone" name="phone" id="phoneNumber" class="form-control">
                             <span class="phoneError"></span>
                         </div>
-                         <div class="inputContainer CreatePassword">
-                            <label for="password">Create Password:</label>
-                            <input type="password" name="createPassword" id="password">
-                            <span class="passwordError"></span>
+                         <div class="inputContainer specialization">
+                            <label for="specialization">Specialization:</label>
+                            <select name="sepcialization" id="spcialization" class="form-control">
+                                <option value="" name="">Select Sepecialization</option>
+                            </select>
+                            <span class="specializationError"></span>
                          </div>
-                         <div class="inputContainer CreatePassword">
-                          <label for="password">Confirm Password:</label>
-                          <input type="password" name="confirmPassword" id="confirmPassword">
-                          <span class="confirmPasswordError"></span>
+                         <div class="inputContainer department">
+                          <label for="department">Department:</label>
+                          <select name="department" id="department" class="form-control">
+                         <option value="" name="option">Select department</option>
+                        </select>
+                          <span class="departmentError"></span>
                         </div>
                         <input type="submit" name="register" value="Register" class="submit">
                     </form>
                 </div>
               </div>
-   <script src="js/doctorSingup.js"></script> 
+              <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+              <script src="../js/bootstrap.min.js"></script>
+              <script src="../js/jquery.mini.js"></script>
+              <script src="js/doctorSingup.js"></script> 
 </body>
 </html>

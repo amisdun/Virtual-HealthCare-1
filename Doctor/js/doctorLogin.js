@@ -1,6 +1,14 @@
+//------- HANDLING API FOR DOCTOR LOGIN --------
+
+const removeStyle = ()=> {
+    document.doctorLogin.email.addEventListener('blur',()=>{
+    document.doctorLogin.email.classList.remove('isInvalid');
+    document.querySelector('.emailError').textContent = " ";
+    })
+}
 
 const validateEmail = (emailInput)=> {
- const regex = /[@.]/;
+ const regex = /@/;
  if(regex.test(emailInput)){
      return true;
  } else {
@@ -43,9 +51,14 @@ const passwordError = document.querySelector('.passError')
     document.doctorLogin.password.classList.remove('isInvalid');
   }
 
-
-  // sending to api
-  if(errorCounter == 0) alert('succesful login')
+  removeStyle();
+  
+  if(errorCounter == 0) 
+  {
+      // --- IF NO ERROR OCCURS HANDLING API AND 
+      // ---- REDIRECT DOCTOR TO DASHBOARD
+  alert('login succesfull')
+  }
 });
 
 
