@@ -7,11 +7,8 @@ html,body{
 .container p{
     text-transform: uppercase;
 }
-.inputContainer{
-  margin:2em 0;
-}
 .banner{
-    background-color:rgb(9, 9, 117);
+    background-color:lightseagreen;
     color:white;
     text-align: center;
     margin: 2em 0 0 0;
@@ -22,9 +19,9 @@ html,body{
     float:right;
     width:200px;
     height: 40px;
-    border: 1px solid blue;
+    border: 1px solid lightseagreen;
     border-radius:4px;
-    background-color:rgb(9, 9, 117);
+    background-color:lightseagreen;
     color:white;
     font-size: 1.2em;
     margin:1em 0 0 0 ;
@@ -34,30 +31,41 @@ html,body{
   border:0px;
 }
 input{
-    float:right;
-    width: 77%;
-    height:27px;
     border:1px solid black;
-    padding:5px;
     font-size: 1.2em;
 }
 input:focus{
     border:2px solid red;
 }
 label{
-    opacity:0.7;
+    opacity:0.9;
     color:black;
     font-size: 1.3em;
-    margin: 10px;
     line-height: 27px;
     padding: 5px;;
 }
 span{
+    display: block;
     float:right;
     clear: both;
     color:red;
 }
-/* responsive design*/
+label{
+    padding:8px;
+}
+.isInvalid{
+    border:2px solid red;
+}
+select{
+    border:1px solid black;
+    font-size: 1em;
+}
+
+select option{
+    padding: 10px;
+}
+/*------- responsive design --------*/
+
 @media screen and (max-width: 768px) {
     .container{
       margin:auto 10%;
@@ -86,7 +94,7 @@ span{
   }
   .submit{
       width:96%;
-      margin:10px 16px 10px 0px;
+      margin:10px 10px 10px 20px;
   }
   select{
       width:100%;

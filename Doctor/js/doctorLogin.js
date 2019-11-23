@@ -1,6 +1,14 @@
+//------- HANDLING API FOR DOCTOR LOGIN --------
+
+const removeStyle = ()=> {
+    document.doctorLogin.email.addEventListener('blur',()=>{
+    document.doctorLogin.email.classList.remove('isInvalid');
+    document.querySelector('.emailError').textContent = " ";
+    })
+}
 
 const validateEmail = (emailInput)=> {
- const regex = /[@.]/;
+ const regex = /@/;
  if(regex.test(emailInput)){
      return true;
  } else {
@@ -28,6 +36,7 @@ const passwordError = document.querySelector('.passError')
  else{
         emailError.textContent =""; 
         document.doctorLogin.email.classList.remove('isInvalid');
+        email = email;
   }
 
   if(password === "") {
@@ -35,17 +44,36 @@ const passwordError = document.querySelector('.passError')
       document.doctorLogin.password.classList.add('isInvalid');
     errorCounter++; 
   } else if(password.length < 8){
-   passwordError.textContent = "password should be greater than 8 characters";
-   document.doctorLogin.password.classList.add('isInvalid');
-   errorCounter++; }
-  else{
+    passwordError.textContent = "password should be greater than 8 characters";
+    document.doctorLogin.password.classList.add('isInvalid');
+    errorCounter++; }
+     else{
     passwordError.textContent = "";
     document.doctorLogin.password.classList.remove('isInvalid');
+    password = password;
+    }
+
+  removeStyle();
+  
+  if(errorCounter == 0) {
+      // --- IF NO ERROR OCCURS HANDLING API AND 
+      // ---- REDIRECT DOCTOR TO DASHBOARD
+      const url = "https://virtual-healthcare.herokuapp.com/oauth/token";
+      const data = {
+          grant_type:'password',
+          username: name,
+          password : password,
+          client_id : '1',
+          client_secret: 'saoOrEV1HxBZYEXk6h6mt3dsENY2GM9h5GT0vZ2s',
+          providers: 'doctors'
+      }
+      axios.post(url,data).then(
+          response => console.log(response)
+      ).catch( err => {
+          console.log(err)
+      })
+  alert('login succesfull')
   }
-
-
-  // sending to api
-  if(errorCounter == 0) alert('succesful login')
 });
 
 
