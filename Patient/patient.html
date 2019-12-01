@@ -256,6 +256,7 @@
                         })
                         .then(res => {
                             if(res.success === true){
+                                window.location = "patientLogin.html";
                                 $("p#sucess").text("you have registered successfully").css("color","green")
                             }
                         })
