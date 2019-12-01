@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trust Pharmacy | SignUp </title>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" type="text/css" href="signup.css">
+    <script src="js/jquery-3.4.1.slim.js"></script>
+  </head>
+  <body>
+    
+        <div class="form-container sign-in-container">
+            <form class="form" id="myForm">
+                <h1>Sign in</h1>
+                <input type="email" placeholder="Email" id="email" />
+                <p id="err1"></p>
+                <input type="password" placeholder="Password" id="password"/>
+                <p id="err2"></p>
+                <a href="#">Forgot your password?</a>
+                <button id="submit">Sign In</button>
+                <p id="err"></p>
+            </form>
+        </div>
+        <script src="js/jquery-3.4.1.slim.js"></script>
+        <script src="js/jquery-3.4.1.js"></script>
+        <script>
+          $(document).ready(function(){
+            $("#submit").click(function(e){
+              e.preventDefault();
+              var email = $("#email").val();
+              var password = $("#password").val();
+              console.log(email);
+              console.log(password)
+              if(!email){
+                $("#err1").text("Email Required").css("color","red");
+
+              }
+              else{
+                $("#err1").text("");
+              }
+
+              if(!password){
+                $("#err2").text("Password Required").css("color","red");
+
+              }
+              else{
+                $("#err2").text("");
+              }
+
+              if(email && password){
+                $("#err").text("Loading.... Please wait").css("color","green")
+                $.ajax({
+                  url: "https://virtual-healthcare.herokuapp.com/oauth/token",
+                  method: "post",
+                  dataType: "json",
+                  data: {
+                    grant_type:'password',
+                    username: email,
+                    password : password,
+                    client_id : '2',
+                    client_secret: "Z74s1YLfKaF3WxRYhO8feG42vY1zqmr7HNCX7Nh8",
+                    provider: 'pharmacists'
+                  },
+                  success: (res) => {
+                    console.log(res)
+                    if(res.token_type == "Bearer"){
+                      var token =  res.access_token;
+                      window.localStorage.setItem("access_token",token);
+
+                      window.location = "pharmacy.html"
+                    }
+                  },
+                  error: (err) => {
+                    console.log(err)
+                   if(err.statusText == "error"){
+                    $("#err").text("Network Error, try again").css("color","red")
+                   }
+                   if(err.responseJSON.error == "invalid_credentials"){
+                     console.log(err.responseJSON.message);
+                     var invalid = err.responseJSON.message;
+                     $("#err").text(invalid).css("color","red")
+                   }
+                  }
+                })
+              }
+            })
+          })
+        </script>
+  </body>
+</html>

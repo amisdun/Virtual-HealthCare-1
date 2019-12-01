@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pharmacy | </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="bulma.css">
+    <script src="js/jquery-3.4.1.slim.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" 
+    integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" 
+    integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" 
+    crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+  <!--Navbar-->
+  <nav class="navbar is-fixed-top box-shadow-y">
+    <div class="navbar-brand">
+        <a href="#" class="navbar-burger toggler">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+
+        <a href="#" class="navabr-item has-text-weight-bold has-text-black"> Trust Pharmacy</a>
+        <a href="#" class="navbar-burger nav-toggler">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </div>
+    <div class="navbar-menu has-background-white">
+        <div class="navbar-start">
+            <a href="#" class="navbar-item">
+                 <i class="fas fa-home icon"> </i> Home
+            </a>
+            <a href="#" class="navbar-item"> Prescription </a>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a href="#" class="navbar-link">Account</a>
+                <div class="navbar-dropdown is-right">
+                    <a href="#" class="navbar-item">Profile</a>
+                    <a href="#" class="navbar-item">settings</a>
+                    <hr class="navbar-divider">
+                    <a href="#" class="navbar-item">Log out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </nav>
+  <!--Navbar-->
+  <div class="columns is-variable is-0">
+    <div>
+        <div class="menu-container px-1 has-background-white">
+            <div class="menu-wrapper py-1">
+                <aside class="menu">
+                    <p class="menu-label">
+                      General
+                    </p>
+                    <a href="pharmacy.html"><ul class="menu-list">
+                      <li><a ><i class="fas fa-tachometer-alt icon"></i> Dashboard</a></li>
+
+                    </ul>
+                    </a>
+                    <p class="menu-label">
+                      Administration
+                    </p>
+                    <ul class="menu-list">
+                     
+                      <li>
+                        <a class="has-background-primary">Drugs</a>
+                        <ul>
+                          <li><a><button class="button is-primary is-rounded intro modal-button"
+                            data-toggle="modal" data-target="#exampleModal"">
+                            Add Drug
+                          </button></a></li>
+                        </ul>
+                      </li>
+                     
+                    </ul>
+                    <p class="menu-label">
+                      Transactions
+                    </p>
+                    <ul class="menu-list">
+                      <li><a>Issue Drugs</a></li>
+                     
+                    </ul>
+                  </aside>
+            </div>
+        </div>
+    </div>
+    <div class="column is-10-desktop is-offset-2-desktop is-9-tablet is-offset-3-tablet is-12-mobile">
+      <div class="p-1">
+        <div class="columns is-variable is-desktop">
+          <div class="column">
+            <br>
+            <h1 class="title">Prescription</h1>
+            <div class="container" >
+                <div class="row" id="pres">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- modal for view all prescripptions -->
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Prescription Details</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div id="new_div"></div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Drug</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                  <label for="drug_name">Drug Name</label>
+                  <input type="text" class="form-control" id="drug_name" aria-describedby="">
+                  
+                </div>
+                <div class="form-group">
+                  <label for="quantity">Quantity</label>
+                  <input type="number" class="form-control" id="quantity">
+                </div>
+                <div class="form-group ">
+                    <label for="price">Price(GHC)</label>
+                  <input type="number" class="form-control" id="price">
+                </div>
+                <button id="add-drug"  class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="button is-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <script src="js/jquery-3.4.1.js"></script>
+  <script src="js/jquery.nicescroll.min.js"></script>
+   <script>
+       //getting user token from localStorage
+    var localToken = window.localStorage.getItem("access_token");
+// getting doctors prescriptions
+$(function (){
+    var $pres = $('#pres');
+  $.ajax({
+    type: 'GET',
+    dataType: 'json',
+    url: 'https://virtual-healthcare.herokuapp.com/api/pharmacy/prescriptions',
+    headers: {"Authorization" : `Bearer ${localToken}`},
+    success: function(res){
+        var new_div = "";
+     $.each(res.data, function(i, item) {
+        new_div +=  `
+  
+                <div class="row">
+                    <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                <h5 class="card-title">Doctor name: ${item.doctor_name}</h5>
+                <p class="card-text">Sickness Description: ${item.case_history}.</p>
+                <button type="button" class="button is-primary view_details" data-toggle="modal"
+                 data-target="#exampleModal2" id="${item.id}">
+                 View Prescriptions details
+                 </button>
+                </div>
+                </div>
+                </div>
+                </div>
+                `
+     });
+     $pres.append(new_div);
+     $(".view_details").click(function(e){
+      e.preventDefault();
+      var pres_id = e.currentTarget.id;
+      console.log(pres_id)
+      $.ajax({
+        url: `https://virtual-healthcare.herokuapp.com/api/pharmacy/prescription/${pres_id}`,
+        method: "get",
+        dataType: "json",
+        headers: {
+            "Authorization": `Bearer ${localToken}`
+        },
+        success: function(res){
+          console.log(res);
+          if(res.data){
+            var d_div = $("#new_div p");
+            if(d_div){
+              d_div.remove();
+            }
+            var submitted;
+            var drug_issued;
+            if(res.data.submitted == 1 || res.data.drug_issued ==1){
+             submitted = "Yes"
+            }
+            else{
+                submitted = "No"
+            }
+
+            if(res.data.drug_issued == 1){
+              drug_issued = "Yes"
+            }
+            else{
+              drug_issued = "No"
+            }
+           var data = "";
+              data += `
+                      <p class="p-3 mb-2 bg-primary text-white">Doctor name: ${res.data.doctor_name}</p>
+                      <p class="p-3 mb-2 bg-primary text-white">Medication: ${res.data.medication}</p>
+                      <p class="p-3 mb-2 bg-primary text-white">Drug Issued: ${drug_issued}</p>
+                      <p class="p-3 mb-2 bg-primary text-white">Submitted: ${submitted}</p>
+                    `;
+            
+            $("#new_div").append(data);
+
+        }
+      },
+        error: function(err){
+          console.log(err)
+        }
+      })
+     })
+    },
+    error: function(err){
+      if(err.statusText == "Unauthorized"){
+        window.location = signup.html;
+        window.localStorage.clear();
+      }
+        console.log(err)
+    }
+  })
+})
+   </script>
+  </body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pharmacy | </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="bulma.css">
+    <script src="js/jquery-3.4.1.slim.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" 
+    integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" 
+    integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" 
+    crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+  <!--Navbar-->
+  <nav class="navbar is-fixed-top box-shadow-y">
+    <div class="navbar-brand">
+        <a href="#" class="navbar-burger toggler">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+
+        <a href="#" class="navabr-item has-text-weight-bold has-text-black"> Trust Pharmacy</a>
+        <a href="#" class="navbar-burger nav-toggler">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </div>
+    <div class="navbar-menu has-background-white">
+        <div class="navbar-start">
+            <a href="#" class="navbar-item">
+                 <i class="fas fa-home icon"> </i> Home
+            </a>
+            <a href="prescription.html" class="navbar-item"> Prescription </a>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a href="#" class="navbar-link">Account</a>
+                <div class="navbar-dropdown is-right">
+                    <a href="#" class="navbar-item">Profile</a>
+                    <a href="#" class="navbar-item">settings</a>
+                    <hr class="navbar-divider">
+                    <a href="#" class="navbar-item">Log out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </nav>
+  <!--Navbar-->
+  <div class="columns is-variable is-0">
+    <div>
+        <div class="menu-container px-1 has-background-white">
+            <div class="menu-wrapper py-1">
+                <aside class="menu">
+                    <p class="menu-label">
+                      General
+                    </p>
+                    <ul class="menu-list">
+                      <li><a><i class="fas fa-tachometer-alt icon"></i> Dashboard</a></li>
+
+                    </ul>
+                    <p class="menu-label">
+                      Administration
+                    </p>
+                    <ul class="menu-list">
+                     
+                      <li>
+                        <a class="has-background-primary">Drugs</a>
+                        <ul>
+                          <li><a><button class="button is-primary is-rounded intro modal-button"
+                            data-toggle="modal" data-target="#exampleModal"">
+                            Add Drug
+                          </button></a></li>
+                        </ul>
+                      </li>
+                     
+                    </ul>
+                    <p class="menu-label">
+                      Transactions
+                    </p>
+                    <ul class="menu-list">
+                      <li><a>Issue Drugs</a></li>
+                     
+                    </ul>
+                  </aside>
+            </div>
+        </div>
+    </div>
+    <div class="column is-10-desktop is-offset-2-desktop is-9-tablet is-offset-3-tablet is-12-mobile">
+      <div class="p-1">
+        <div class="columns is-variable is-desktop">
+          <div class="column">
+            <br>
+            <h1 class="title is-fixed-top">Dashboard</h1>
+            <div class="container" >
+                <div class="row" id="drugs">
+                  <br>      
+                  </div>
+                </div>
+              </div>
+            </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Drug</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form id="form" method="POST">
+                <div class="form-group">
+                  <label for="drug_name">Drug Name</label>
+                  <input type="text" class="form-control" id="drug_name" aria-describedby="">
+                  
+                </div>
+                <div class="form-group">
+                  <label for="quantity">Quantity</label>
+                  <input type="number" class="form-control" id="quantity">
+                </div>
+                <div class="form-group ">
+                    <label for="price">Price(GHC)</label>
+                  <input type="number" class="form-control" id="price">
+                </div>
+                <button id="add-drug" type="submit"  class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="button is-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal for edit drug -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Drug</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form id="form" method="POST">
+                <div class="form-group">
+                  <label for="drug_name">Drug Name</label>
+                  <input type="text" class="form-control" id="drug_name1" aria-describedby="">
+                  
+                </div>
+                <div class="form-group">
+                  <label for="quantity">Quantity</label>
+                  <input type="number" class="form-control" id="quantity1">
+                </div><br>
+                <p id="edit"></p>
+                <!-- <div class="form-group ">
+                    <label for="price">Price(GHC)</label>
+                  <input type="number" class="form-control" id="price">
+                </div> -->
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary edit">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="container"></div>
+    <div id="form-area">
+      <h2>get</h2>
+      <input id="get" type="submit" value="Get">
+    </div> -->
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="js/jquery-3.4.1.js"></script>
+  <script src="js/jquery.nicescroll.min.js"></script>
+  <script>
+$(document).ready(function(){
+      //getting user token from localStorage
+      var localToken = window.localStorage.getItem("access_token");
+    console.log(localToken)
+    // ajax calls to create drugs
+function drugTemplate(drug){
+  return `
+  
+      <div class="row">
+          <div class="col-sm">
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">${drug.drug_name}</h5>
+    <p class="card-text">Quantity: ${drug.quantity}.</p>
+    <p class="card-text">Price(GHC): ${drug.price}.</p>
+    <button type="button" class="button is-primary edit-drug" data-toggle="modal" data-target="#exampleModal1" id="${drug.id}">Edit Drug</button>
+  </div>
+</div>
+</div>
+</div>
+  `
+}
+$(function (){
+  var $drugs =$('#drugs');
+  var $drug_name =$('#drug_name');
+  var $quantity = $('#quantity');
+  var $price = $('#price');
+
+  $.ajax({
+    type: 'GET',
+    dataType: 'json',
+    url: 'https://virtual-healthcare.herokuapp.com/api/pharmacy/drugs',
+    success: function(drugs){
+      console.log(drugs)
+      $.each(drugs, function(index, drug){
+        $drugs.append( drug.map(drugTemplate).join(''))
+      })
+      $(".edit-drug").click(function(e){
+        e.preventDefault();
+        var edit_id = e.currentTarget.id;
+        console.log(edit_id)
+        $(".edit").click(function(){
+          $("#edit").text("In progress...").css("color","green")
+          var new_name = $("#drug_name1").val();
+          var new_quantity = $("#quantity1").val();
+          console.log(new_name)
+          console.log(new_quantity)
+          $.ajax({
+          method: "put",
+          url: `https://virtual-healthcare.herokuapp.com/api/pharmacy/drug/${edit_id}`,
+          headers: {
+            "Authorization" : `Bearer ${localToken}`
+          },
+          data: {
+            drug_name : new_name,
+            quantity: new_quantity
+          },
+          success: function(res){
+            if(res){
+              $("#edit").text("drug editted successfully").css("color","green")
+              location.reload();
+            }
+          },
+          error: function(err){
+            console.log(err)
+          }
+        })
+        })
+      })
+    }
+  })
+      });
+
+$("#add-drug").click(function(e){
+  console.log(localToken)
+  e.preventDefault();
+var vname = $("#drug_name").val();
+var vquantity = $("#quantity").val();
+var vprice = $("#price").val();
+console.log(vname)
+console.log(vquantity)
+console.log(vprice)
+if(vname=='' && vquantity=='')
+{
+alert("Please fill out the form");
+}
+else if(vname=='' && vquantity!==''){alert('Name field is required')}
+else if(vquantity=='' && vname!==''){alert('Quantity field is required')}
+else{
+console.log(vname)
+console.log(vquantity)
+console.log(vprice)
+$.ajax({
+      url: "https://virtual-healthcare.herokuapp.com/api/pharmacy/add-drug",
+      dataType: "json",
+      method: "post",
+      headers: {
+        "Authorization" : `Bearer ${localToken}`
+      },
+      data: {
+        drug_name: vname,
+        quantity: vquantity,
+        price: vprice
+      },
+      success: (res) => {
+        if(res){
+          console.log(res)
+          location.reload()
+        }
+
+      },
+      error: function(err){
+        console.log(err)
+      }
+      });
+    }
+  })
+})
+  </script>
+  </body>
+</html>
