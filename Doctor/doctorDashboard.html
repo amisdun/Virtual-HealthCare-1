@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" >
+    <!-- fontawsome -->
+  
+    <script defer src="depend/fontawesome/js/all.js"></script>
+    
+
+    <!-- custom style -->
+    <link rel="stylesheet" href="depend/style.css" >
+
+    <title>Hello, world!</title>
+
+    <!-- Image and text -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <img src="media/11.jpg" alt="" style="width: 6%; margin-right: 5%;">
+      <h1><b>Trust Hospital </b></h1>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="margin-left: 20%;">
+              <a class="navbar-brand" href="#"> Services</a>
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#"> gallary<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">help</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+   
+
+  </head>
+  <body>
+    <div class ="row ">
+        <div class="col-4" id="new_list">
+                <img src="media/doc.jpg" alt="dr.kwame" class="rounded-circle" id="docImage">
+                <h4 style="margin-left: 10%;">Dr. Alex Appiah</h4>  
+                <p style="margin-left: 10%;" ><b>Cardiologyst</b></p>
+
+                <hr class="dark">
+                  <b style="color: rgba(136, 40, 40, 0.747); margin-left: 10%;" id="p_msg">Pending Tasks</b>
+               
+               <!-- <ul><i class="far fa-circle" style="color: green;"></i><a  href="#" id="managePatientVisits1"  role="button" > Linda Belson 
+               </a></ul>
+               <ul><i class="far fa-circle" style="color: green;"></i><a  href="#" id="managePatientVisits2"  role="button"> Mr. Eric Sintim 
+               </a></ul>
+               <ul><i class="far fa-circle" style="color: green;"></i><a  href="#" id="managePatientVisits3" role="button"> Mr. David Arthur 
+               </a></ul>
+               <ul><i class="far fa-circle" style="color: green;"></i><a  href="#" id="managePatientVisits4"  role="button" > Mrs. Gladys Gorman 
+               </a></ul>  -->
+
+               
+        </div>
+        <div class="col-8"> 
+                <div class="alert " role="alert" style="background: rgb(241, 241, 241); width: 75%;";>
+                  
+                <button type="button" class="btn btn-outline-dark" id="approveAppointment" >Approve Appointment</button>  
+                <button type="button" class="btn btn-outline-warning" id="managePatientVisits" >Chat</button>
+                <button type="button" class="btn btn-outline-primary" id="MedicalHistory" >Medical History</button>
+                <button type="button" class="btn btn-outline-success" id="WritePriscription" >Write Priscription </button>
+              
+                </div>
+                <div style="height: 4in;">  
+                  <!-- approveAppointment -->
+                    <div class="tabs">
+                        <div class="collapse multi-collapse4" id="approveAppointment">
+                          <div class="card card-body">
+                             <div style="margin-left: 5%;"> <img src="media/doc.jpg" alt="client" id="clientImg"><b style="margin-left: 2%;" >Mr. David Arthur</b> <button type="button" class="btn btn-outline-warning" style="margin-left: 37%; float: right;">Approve</button></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- managePatientVisits             -->
+                  <div class="tabs">
+                    <div class="scroll">
+                    <div class="collapse multi-collapse1" id="managePatientVisits">
+                      <div class="card card-body">
+                         <div> <img src="media/doc.jpg" alt="client" id="clientImg"><b style="margin-left: 2%;" >Mr. David Arthur</b></div>
+                        <hr>
+                        <div class="alert " role="alert" style="background: rgb(66, 196, 124); width: 50%; border-top-left-radius: 0%;";>Hello</div>
+                        <div class="alert " role="alert" style="background: rgb(65, 195, 228); width: 50%; margin-left: 50%; border-bottom-right-radius: 0%;";>Good morning, Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry 
+                          richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</div>
+                        <form action="post">
+                          <textarea name="chat" id="docChat"  rows="1"></textarea>
+                          <a href="#" ><i class="fas fa-paper-plane fa-lg" style="margin-bottom: 2%;margin-left: 1%;"></i></a>
+                        </form>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                  <!-- MedicalHistory -->
+                  <div class="tabs">
+                    <div class="collapse multi-collapse2" id="MedicalHistory">
+                      <div class="card card-body">
+                        <div class="scroll">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- WritePriscription -->
+                  <div class="tabs">
+                    <div class="collapse multi-collapse3" id="WritePriscription">
+                      <div class="card card-body" >
+
+                          <div class="scroll">
+                              <div> <img src="media/doc.jpg" alt="client" id="clientImg"><b style="margin-left: 2%;" >Mr. David Arthur</b></div>
+                              <hr>
+                              <h4>Diagnoses</h4>
+                              <textarea name="chat" id="docChat"  rows="10"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
+                                 craft beer labore wes anderson cred nesciunt sapiente ea proident.</textarea>
+                              <hr>
+                                 <h4>Priscription</h4>
+                              <textarea name="chat" id="docChat"  rows="10"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
+                                 craft beer labore wes anderson cred nesciunt sapiente ea proident.</textarea>
+                           <span class="text text-muted" style="margin-left: 70%;">20-11-19, 16:45pm</span>  
+                          </div>
+                        
+                          
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <input type="file" name="" id="file">
+                <input type="submit" value="submit" id="submit"> -->
+
+                <div id="tabAction">
+                  <a class="btn btn-outline-success" id="collapseall" >Submit</a>
+                </div>    
+        </div>
+    </div>
+<hr>
+    <footer class="row footer">
+      <div class="col" style="height: 1in;">
+        <div style="padding-top: 3%; margin-left: 5%;">
+       <b>Contact Us: trusthospital@info.gh</b> 
+       <br>
+       <i class="fab fa-facebook-f" style="margin-top: 2%; margin-left: 10%;"></i>
+       <i class="fab fa-twitter" style="margin-top: 2%; margin-left: 3%;"></i>
+       </div>
+      </div>
+      <div class="col" >
+           <nav class="navbar navbar-expand-lg navbar-light bg-light" style="float: right; margin-top: 3%;"> 
+            <h1><b>Trust Hospital </b></h1>
+            <img src="media/11.jpg" alt="" style="width: 12%; margin-left: 20%;">
+                  
+        </nav>
+      </div>
+       
+</div>
+
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="depend/jquery-3.3.1.slim.min.js" ></script>
+    <script src="depend/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js" ></script>
+
+
+    <script>
+      // document.getElementById("submit").addEventListener("click",function(){
+      //   var files = document.querySelector("#file").files[0];
+      //   var read = new FileReader();
+      //   read.readAsArrayBuffer(files)
+      //   console.log(files)
+      //   console.log(read)
+      // })
+      $(document).ready(function(){
+        let localtoken = window.localStorage.getItem("access_token");
+        let user_id = window.localStorage.getItem("user_id")
+        axios({
+          url: "https://virtual-healthcare.herokuapp.com/api/doctor/appointment-list",
+          method: "get",
+          dataType: "json",
+          headers: {
+            "Authorization" : `Bearer ${localtoken}`
+          },
+          success: (res) => {
+            if(res.data.length > 0){
+              var list = "";
+              $.each(res.data,function(index,data){
+                  list += `<ul><i class="far fa-circle" style="color: green;"></i><a  href="#" id="managePatientVisits1"  role="button" > ${data.name} 
+                              </a>
+                           </ul>`
+              })
+              $("#new_list").append(list)
+            }
+            else{
+                $("#p_msg").text("No Task Pending")
+            }
+          },
+          error: (err) => {
+              if(err.statusText == "error"){
+
+              }
+          }
+        })
+
+        axios({
+          url: "https://virtual-healthcare.herokuapp.com/api/doctor/prescription/make",
+          method: "post",
+          dataType: "json",
+          data: {
+              user_id: user_id,
+              
+          },
+          success: (res) => {
+            
+          },
+          error: (err) => {
+
+          }
+        })
+      
+      $('#managePatientVisits ').click(function(){
+        $('.multi-collapse1')
+          .collapse('show');
+          $('.multi-collapse2')
+          .collapse('hide');
+          $('.multi-collapse3')
+          .collapse('hide');
+          $('.multi-collapse4')
+          .collapse('hide');
+      });
+      $('#MedicalHistory').click(function(){
+        $('.multi-collapse1')
+          .collapse('hide');
+          $('.multi-collapse2')
+          .collapse('show');
+          $('.multi-collapse3')
+          .collapse('hide');
+          $('.multi-collapse4')
+          .collapse('hide');
+      });
+      $('#WritePriscription').click(function(){
+        $('.multi-collapse1')
+          .collapse('hide');
+          $('.multi-collapse2')
+          .collapse('hide');
+          $('.multi-collapse3')
+          .collapse('show');
+          $('.multi-collapse4')
+          .collapse('hide');
+      });
+      $('#approveAppointment, #managePatientVisits1, #managePatientVisits2 ,#managePatientVisits3, #managePatientVisits4').click(function(){
+        $('.multi-collapse1')
+          .collapse('hide');
+          $('.multi-collapse2')
+          .collapse('hide');
+          $('.multi-collapse3')
+          .collapse('hide');
+          $('.multi-collapse4')
+          .collapse('show');
+      });
+      })
+      </script>
+  </body>
+</html>
