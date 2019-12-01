@@ -4,10 +4,198 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Patient Login </title>
-    <link rel="stylesheet" href="css/patientlogin.css">
+    <title>Document</title>
 </head>
+<style>
+   html,body{
+       margin:0px;
+       padding:0px;
+   }
+   .wrapper{
+       width:50%;
+       margin:auto;
+   }
+   .content{
+       background-color:white;
+       border:1px solid #ccc;
+       padding: 3em;
+       border-radius:2em;
+   }
+   .heading p#heading{
+    text-transform: uppercase;
+    color:black;
+    opacity: 0.9;
+    text-align: center;
+   }
+   .user{
+       width:100px;
+       height:100px;
+       background-color:rgb(9, 9, 117);
+       margin: auto;
+       border-radius:50px;
+       position: relative;
+       top:30px;
+   }
+   .inputContainer{
+       margin:auto;
+       margin:1.5em;
+   }
+   input{
+       width:100%;
+   }
+   .email,.password{
+       height:20px;
+       padding:10px;
+       border: 1px solid black;
+   }
+   .submit{
+    color:white;
+    background-color:rgb(9, 9, 117);
+    border:1px solid blue;
+    padding:1em 10px 1em 10px;
+    border-radius:15px;
+    box-shadow: 0px 2px 4px 2px grey;
+   }
+   .forgotPassword{
+       float:right;
+   }
+   .forgotPassword a{
+       text-decoration:none;
+       color:rgb(9, 9, 117);
+   }
+   @media screen and (max-width:768px) {
+       .wrapper{
+         width:70%;
+       }
+   }
+   @media screen and (max-width:450px) {
+       .wrapper{
+           width:90%;
+       }
+       .inputContainer{
+       margin:auto;
+       margin:1.5em 0;
+   }
+   .formContianer{
+       margin:auto;
+   }
+   }
+</style>
 <body>
-    <script src="js/patientLogin.js"></script>
+    <div class="wrapper">
+        <div class="user">
+    
+        </div>
+       <div class="content">
+        <div class="heading">
+            <p id="heading">Patient Login</p>
+        </div>
+        <div class="formContainer">
+            <form action="">
+                    <div class="inputContainer">
+                        <input type="email" id="email" name="email" placeholder="Email" class="email" required>
+                    </div>
+                    <p id="err_email" style="text-align: center"></p>
+                    <div class="inputContainer">
+                        <input type="password" id="pass" name="password" placeholder="password" class="email" required>
+                    </div>
+                    <p id="err_pass" style="text-align: center"></p>
+                    <div class="inputContainer" >
+                    <input type="submit" id="login" name="register" value="Log In" class="submit">
+                    </div>
+                    <p id="err" style="text-align: center"></p>
+            </form>
+            <div class="forgotPassword">
+                    <a href="">Forgot Password?</a>
+                </div>
+        </div>
+    </div>
+</div>
+<script src="jquery-3.4.1.slim.min.js"></script>
+<script src="jquery.mini.js"></script>
+<script>
+    $(document).ready(function(){
+        
+        $("#login").click(function(e){
+            e.preventDefault()
+
+            var pass = $("#pass").val();
+            var email = $("#email").val();
+
+            if(!pass){
+                $("#err_pass").text("Password required").css("color","red")
+            }
+            else{
+                $("#err_pass").text("")
+            }
+
+            if(!email){
+                $("#err_email").text("Email required").css("color","red")
+            }
+            else{
+                $("#err_email").text("")
+            }
+            var err_pass = $("#err_pass").text();
+            var err_email = $("#err_email").text();
+            if(!err_pass && !err_email){
+                // AJAX CALLS GOES HERE
+                $("p#err").text("Loading...").css("color","green")
+                $.ajax({
+                    url: "https://virtual-healthcare.herokuapp.com/oauth/token",
+                    dataType: "json",
+                    method: "post",
+                    data: {
+                        client_id: "2",
+                        client_secret: "Z74s1YLfKaF3WxRYhO8feG42vY1zqmr7HNCX7Nh8",
+                        provider: "users",
+                        password:pass,
+                        username:email,
+                        grant_type: "password"
+                    },
+                    success: function(res){
+                        if(res.token_type === "Bearer"){
+                            var token = res.access_token;
+                            window.localStorage.setItem('access_token',token)
+                            $.ajax({
+                                url: "https://virtual-healthcare.herokuapp.com/api/user",
+                                method: "get",
+                                headers: {
+                                    "Authorization" : `Bearer ${token}`
+                                },
+                                dataType: "json",
+                                success: function(res){
+                                    if(res){
+                                        $("p#err").text("login sucessfully").css("color","green")
+                                        window.localStorage.setItem('name',res.name);
+                                        window.localStorage.setItem('id',res.id);
+                                        
+                                    
+                                        window.location = "index.html"
+                                    }
+                                },
+                                error: function(err){
+                                    
+                                    if(err.statusText == "error"){
+                                    $("p#err").text("An error occured, Try again").css("color","red")
+                                    }
+                                }
+                            })
+                        }
+                    },
+                    error: function(err){
+                        
+                        if(err.statusText == "Unauthorized"){
+                            var err_msg = err.responseJSON.message;
+                            $("p#err").text(err_msg).css("color","red")
+                        }
+                        if(err.statusText == "error"){
+                            $("p#err").text("An error occured, Try again").css("color","red")
+                        }
+                    }
+                })
+            }
+    })
+})
+</script>
 </body>
 </html>
